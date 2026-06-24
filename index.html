@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>EJERCICIO MEMORIA</title>
+</head>
+<body class="min-h-screen p-2 md:p-6 bg-gradient-to-br from-cyan-200 via-teal-200 to-emerald-300">
+
+    <header class="border-4 md:border-8 border-teal-600 border-double rounded-3xl w-full max-w-7xl 3xl:max-w-[110rem]
+     mx-auto py-5 mb-10 mt-2 bg-gradient-to-r from-teal-400 to-cyan-400 shadow-xl">
+        <h1 class="text-xl md:text-3xl font-bold text-center text-white drop-shadow-md">MEMORIZACIÓN</h1>
+    </header>
+
+    <div class="bg-[url(imagenes/memori.webp)] bg-cover bg-center w-[90%] sm:w-[80%] md:w-[70%] lg:max-w-3xl mx-auto mb-10 aspect-video rounded-3xl 
+    shadow-2xl border-4 border-white/50"></div>
+
+    <main class="w-full max-w-7xl 3xl:max-w-[90rem] mx-auto">
+
+      <details class="mb-11 border-2 rounded-2xl border-teal-600 p-4 w-full bg-white/90 shadow-lg">
+        <summary class="border-2 rounded-2xl border-teal-600 w-32 pl-2 cursor-pointer font-bold mb-2 text-teal-800">setTimeout</summary>
+        <p class="text-sm md:text-base text-gray-800 font-medium">Entrena tu memoria visual con este juego. 
+        Aparecerá un tablero con 5 a 9 números, que permanecerá en pantalla unos segundos. 
+        Al desaparecer, deberás escribir los números en el mismo orden en el cual los has visto
+        y presionar el botón <code>Comprobar</code>. Una vez comprobado, presionar <code>Reiniciar.</code></p>
+      </details>
+
+      <div class="text-center border-2 border-teal-600 border-solid rounded-3xl w-full mx-auto px-4 py-6 bg-gradient-to-br from-white to-cyan-100 shadow-2xl">
+        <h3 class="pb-8 text-xl md:text-2xl font-bold text-teal-900">MEMORIZACIÓN</h3>
+
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-6 mb-8"> 
+          
+          <div class="flex flex-col md:flex-row items-center gap-2 w-full lg:w-auto">
+            <label class="text-sm md:text-base whitespace-nowrap font-bold text-teal-900">Escoge cuántos números:</label>
+            <select class="p-2 w-full lg:w-32 border-2 border-teal-500 rounded-2xl bg-teal-50 font-bold text-teal-900
+             focus:ring-2 focus:ring-teal-400 outline-none cursor-pointer" id="numero">
+                <option value="5" selected>5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+          </div> 
+
+          <div class="flex flex-wrap justify-center items-center gap-3 w-full lg:w-auto">
+            <button class="p-2 w-full sm:w-32 border-2 border-teal-600 rounded-2xl bg-teal-500 text-white font-bold
+             hover:bg-teal-600 transition-all shadow-md cursor-pointer" type="button" id="jugar">Comenzar</button>
+            <button class="p-2 w-full sm:w-32 border-2 border-teal-600 rounded-2xl bg-teal-500 text-white font-bold
+             hover:bg-teal-600 transition-all disabled:opacity-40 shadow-md cursor-pointer" type="button" id="comprobar" disabled>Comprobar</button>
+            <button class="p-2 w-full sm:w-32 border-2 border-teal-600 rounded-2xl bg-teal-500 text-white font-bold
+             hover:bg-teal-600 transition-all shadow-md cursor-pointer" type="button" id="reiniciar">Reiniciar</button>
+          </div>
+        </div> 
+
+        <div id="numeros" class="text-2xl md:text-4xl font-black my-8 min-h-[40px] text-teal-900 tracking-wider"></div>
+        <div id="respuesta" class="hidden flex flex-wrap justify-center gap-2 mb-8"></div>
+
+        <div>
+            <p id="resultado" class="text-lg md:text-xl font-black text-teal-700 pt-2"></p>
+        </div>  
+      </div>
+    </main>
+
+    <script src="js/time.js"></script>
+</body>
+</html>
